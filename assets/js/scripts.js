@@ -19,7 +19,7 @@ function createDivError(){
 // Función principal para obtener la data
 async function getMonedas() {
     try {
-        const apiURL = "https://msindicador.cl/api/";
+        const apiURL = "https://mindicador.cl/api/";
         const res = await fetch(apiURL);
         const data = await res.json();
 
