@@ -83,7 +83,12 @@ async function realizarCalculo(monedaSelect) {
     const monedas = await dataClean();
     const moneda = monedas.filter((ele) => ele.codigo === monedaSelect);
     
-    let resultado = (input.value / (moneda[0].valor)).toFixed(2);
+    let valor = Number(input.value);
+    if (valor < 0) {
+        valor = valor * -1;
+    }
+    
+    let resultado = (valor / (moneda[0].valor)).toFixed(2);
     mostrarResultado.innerHTML = `
         Resultado: ${
             moneda[0].codigo === 'dolar'
